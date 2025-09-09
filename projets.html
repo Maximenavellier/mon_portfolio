@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes Projets</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Mes Projets</h1>
+      <a href="index.html" class="btn-outline">Retour à l’accueil</a>
+      <button id="darkModeToggle" class="btn-outline mode-toggle">
+        🌙 Mode sombre
+      </button>
+    </header>
+
+    <main class="projets" id="projetsContainer">
+      <!-- Les projets seront générés automatiquement avec JS -->
+    </main>
+
+    <!-- Modale détails projet -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImg" src="" alt="" />
+        <p id="modalDesc"></p>
+        <p><strong>Technologies :</strong> <span id="modalTech"></span></p>
+        <p><strong>Date :</strong> <span id="modalDate"></span></p>
+        <a id="modalLink" href="#" target="_blank" class="btn"
+          >Voir sur GitHub</a
+        >
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
