@@ -21,89 +21,107 @@ if (cvBtn) {
 const projets = [
   {
     titre: "Fazbear MP",
-    image: "images/fazbearmp.png",
+    image: "images/fazbearmp1.png",
+    images_detail: [
+      "images/fazbearmp1.png",
+      "images/fazbearmp2.png",
+      "images/fazbearmp3.png",
+    ],
     description:
       "Jeux vidéo de type survival horror réalisé en duo avec Unity.",
     description_detail:
-      "Jeux vidéo de type survival horror réalisé en duo avec Antoine lebègue sur Unity. Mon role étant de créer le mini jeux en 2d permettant au survivant de gagner.",
+      "Jeux vidéo de type survival horror réalisé en duo avec Antoine Lebègue sur Unity. Mon rôle étant de créer le mini-jeu en 2D permettant au survivant de gagner.",
     techno: "HTML, CSS",
     date: "2024",
     lien: "https://github.com/tonprofil/projet1",
   },
   {
-    titre: "Projet 2",
+    titre: "Whatwewatchingboyz",
     image: "images/projet2.png",
+    images_detail: ["images/projet2.png"],
     description: "Application mobile en Flutter.",
-    description_detail: "",
+    description_detail:
+      "Application mobile en Flutter réalisée pour tester la techno.",
     techno: "Flutter, Dart",
     date: "2025",
     lien: "https://github.com/tonprofil/projet2",
-  },
-  {
-    titre: "Projet 3",
-    image: "images/projet3.png",
-    description: "Petit jeu 2D en Unity.",
-    description_detail: "",
-    techno: "Unity, C#",
-    date: "2025",
-    lien: "https://github.com/tonprofil/projet3",
   },
 ];
 
 // --- Génération dynamique des projets ---
 const container = document.getElementById("projetsContainer");
 if (container) {
+  container.innerHTML = "";
   projets.forEach((p, i) => {
     const card = document.createElement("div");
-    card.classList.add("projet-card");
+    card.className = "projet-card";
     card.innerHTML = `
       <img src="${p.image}" alt="${p.titre}">
       <h2>${p.titre}</h2>
       <p>${p.description}</p>
-      <a href="${p.lien}" target="_blank" class="btn">Voir sur GitHub</a>
       <button class="btn-outline" data-index="${i}">Détails</button>
     `;
     container.appendChild(card);
   });
 }
 
-// --- Modale détails ---
+// --- Références modale ---
 const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalImgs = document.getElementById("modalImgs");
+const modalDesc = document.getElementById("modalDesc");
+const modalTech = document.getElementById("modalTech");
+const modalDate = document.getElementById("modalDate");
+const modalLink = document.getElementById("modalLink");
+const closeModalBtn = document.getElementById("closeModal");
 
+// --- Ouvrir la modale ---
 if (container && modal) {
   container.addEventListener("click", (e) => {
-    if (e.target.tagName === "BUTTON") {
-      const index = e.target.dataset.index;
-      const p = projets[index];
-      document.getElementById("modalTitle").textContent = p.titre;
-      document.getElementById("modalImg").src = p.image;
-      document.getElementById("modalDesc").textContent = p.description;
-      document.getElementById("modalDesc").textContent = p.description_detail;
-      document.getElementById("modalTech").textContent = p.techno;
-      document.getElementById("modalDate").textContent = p.date;
-      document.getElementById("modalLink").href = p.lien;
-      modal.style.display = "flex";
-    }
+    const btn = e.target.closest("button[data-index]");
+    if (!btn) return;
+
+    const index = btn.dataset.index;
+    const p = projets[index];
+    if (!p) return;
+
+    modalTitle.textContent = p.titre || "";
+
+    modalImgs.innerHTML = "";
+    const imagesToShow =
+      Array.isArray(p.images_detail) && p.images_detail.length
+        ? p.images_detail
+        : [p.image];
+
+    imagesToShow.forEach((src) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = p.titre || "";
+      img.className = "modal-image";
+      modalImgs.appendChild(img);
+    });
+
+    modalDesc.textContent =
+      p.description_detail && p.description_detail.trim() !== ""
+        ? p.description_detail
+        : p.description || "";
+
+    modalTech.textContent = p.techno || "";
+    modalDate.textContent = p.date || "";
+    modalLink.href = p.lien || "#";
+
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
   });
 
-  closeModal.addEventListener("click", () => {
+  const closeModalFunction = () => {
     modal.style.display = "none";
-  });
+    document.body.style.overflow = "";
+  };
+
+  closeModalBtn.addEventListener("click", closeModalFunction);
 
   window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+    if (e.target === modal) closeModalFunction();
   });
 }
-
-// --- Scroll fluide (index -> projets) ---
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-});

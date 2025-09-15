@@ -1,13 +1,16 @@
-/* Style global */
+/* ===== Style global ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #f5fdf7;
   color: #333;
+  opacity: 0; /* effet fade in */
+  animation: fadeIn 0.8s ease-out forwards;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Page d’accueil */
+/* ===== Section accueil ===== */
 .hero {
   display: flex;
   justify-content: center;
@@ -43,6 +46,7 @@ h2 {
   font-weight: normal;
 }
 
+/* ===== Boutons ===== */
 .btn,
 .btn-outline {
   display: inline-block;
@@ -51,6 +55,7 @@ h2 {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .btn {
@@ -59,6 +64,7 @@ h2 {
 }
 .btn:hover {
   background: #5e9f7c;
+  transform: scale(1.05);
 }
 
 .btn-outline {
@@ -68,8 +74,10 @@ h2 {
 .btn-outline:hover {
   background: #7fbf9d;
   color: #fff;
+  transform: scale(1.05);
 }
 
+/* ===== Réseaux sociaux ===== */
 .socials {
   margin-top: 15px;
 }
@@ -82,7 +90,7 @@ h2 {
   text-decoration: underline;
 }
 
-/* Page projets */
+/* ===== Projets ===== */
 .page-header {
   text-align: center;
   padding: 20px;
@@ -105,25 +113,42 @@ h2 {
   padding: 15px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
 }
+
+.projet-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.projet-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.projet-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.projet-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 .projet-card img {
   max-width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
-}
-.projet-card h2 {
-  margin: 10px 0;
-  color: #2f5d50;
+  padding: 3px;
+  border: 2px solid #7fbf9d;
 }
 
-/* Bouton mode sombre */
+/* ===== Mode sombre ===== */
 .mode-toggle {
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
-/* Mode sombre */
 body.dark {
   background: #121212;
   color: #eee;
@@ -143,40 +168,83 @@ body.dark a {
   color: #9fd1ff;
 }
 body.dark .btn {
-  background: #5e9f7c;
+  background: #6a9b71;
+  color: #e0ffcb;
 }
 body.dark .btn-outline {
+  background-color: #1e1e1e;
   border-color: #5e9f7c;
-  color: #eee;
+  color: #e0ffcb;
 }
 
-/* Modale */
+/* ===== Modale ===== */
 .modal {
-  display: none;
+  display: none; /* cachée par défaut */
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* couvre toute la largeur */
+  height: 100vh; /* couvre toute la hauteur */
   z-index: 1000;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8); /* fond sombre semi-transparent */
   justify-content: center;
   align-items: center;
 }
+
 .modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 600px;
+  width: 90%;
   text-align: center;
   position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 0.3s ease; /* petite anim fluide */
 }
+
 .modal-content img {
   max-width: 100%;
   border-radius: 10px;
   margin: 10px 0;
+  border: 2px solid #7fbf9d;
 }
+
 #closeModal {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 20px;
   cursor: pointer;
+  color: #555;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
