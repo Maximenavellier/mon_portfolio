@@ -3,31 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mes Projets</title>
+    <title>Mon Portfolio - Projets</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button id="darkModeToggle" class="mode-toggle">🌙 Mode sombre</button>
+
     <header class="page-header">
       <h1>Mes Projets</h1>
-      <a href="index.html" class="btn-outline">Retour à l’accueil</a>
-      <button id="darkModeToggle" class="btn-outline mode-toggle">
-        🌙 Mode sombre
-      </button>
+      <a href="index.html" class="btn-outline">← Retour à l'accueil</a>
     </header>
 
     <main class="projets" id="projetsContainer">
-      <!-- Les projets seront générés automatiquement avec JS -->
+      <!-- Projets générés par JS -->
     </main>
 
-    <!-- Modale détails projet -->
+    <!-- Modale -->
     <div id="modal" class="modal">
       <div class="modal-content">
-        <span id="closeModal">&times;</span>
+        <button id="closeModal">&times;</button>
         <h2 id="modalTitle"></h2>
-        <div id="modalImgs"></div>
+        <div id="modalImages"></div>
         <p id="modalDesc"></p>
-        <p><strong>outils utilisés :</strong> <span id="modalTech"></span></p>
-        <p><strong>Dates :</strong> <span id="modalDate"></span></p>
+        <p><strong>Technologies:</strong> <span id="modalTech"></span></p>
+        <p><strong>Date:</strong> <span id="modalDate"></span></p>
         <a id="modalLink" href="#" target="_blank" class="btn"
           >Voir sur GitHub</a
         >
