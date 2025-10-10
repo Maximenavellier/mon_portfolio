@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- Métadonnées de la page (encodage, responsive, titre) -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon Portfolio - Accueil</title>
+    <!-- Lien vers la feuille de style CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Bouton pour basculer entre le mode clair et le mode sombre -->
     <button id="darkModeToggle" class="mode-toggle">🌙 Mode sombre</button>
 
+    <!-- Section principale "hero" qui occupe tout l'écran -->
     <section class="hero">
+      <!-- Carte de profil contenant les informations principales -->
       <div class="profile-card">
+        <!-- Image de profil -->
         <img src="images/moi.jpg" alt="Photo de profil" class="profile-img" />
+        <!-- Nom et titre -->
         <h1>Maxime Navellier</h1>
         <h2>Étudiant en Informatique</h2>
+        <!-- Courte biographie -->
         <p>
           Passionné par le développement web et les nouvelles technologies.<br />
           Actuellement à la recherche d'un stage/emploi.
         </p>
 
+        <!-- Groupe de boutons d'action -->
         <div class="btn-group">
+          <!-- Bouton pour télécharger le CV -->
           <a href="images/cvmca.pdf" download id="downloadCV" class="btn"
             >Télécharger CV</a
           >
-          <a href="projets.html" class="btn-outline">Voir mes projets</a>
+          <!-- Lien vers la page "A propos de moi" -->
+          <a href="a-propos.html" class="btn-outline">A propos de moi</a>
         </div>
 
+        <!-- Section des liens vers les réseaux sociaux -->
         <div class="socials">
           <a href="https://github.com/Maximenavellier" target="_blank"
             >GitHub</a
@@ -40,6 +52,7 @@
       </div>
     </section>
 
+    <!-- Lien vers le fichier JavaScript pour l'interactivité -->
     <script src="script.js"></script>
   </body>
 </html>

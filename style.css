@@ -1,10 +1,10 @@
-/*  RESET  */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Style de base pour le corps de la page (police, fond, couleur de texte). */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #f5fdf7 0%, #e8f5e8 100%);
@@ -14,12 +14,14 @@ body {
   min-height: 100vh;
 }
 
+/* Style du corps en mode sombre. */
 body.dark {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   color: #eee;
 }
 
 /*  MODE SOMBRE  */
+/* Style du bouton pour changer de mode (clair/sombre). */
 .mode-toggle {
   position: fixed;
   top: 20px;
@@ -36,12 +38,14 @@ body.dark {
   backdrop-filter: blur(10px);
 }
 
+/* Effet au survol du bouton de mode. */
 .mode-toggle:hover {
   background: #7fbf9d;
   color: white;
   transform: translateY(-2px);
 }
 
+/* Style du bouton de mode en thème sombre. */
 body.dark .mode-toggle {
   background: rgba(30, 30, 30, 0.9);
   color: #e0ffcb;
@@ -49,6 +53,7 @@ body.dark .mode-toggle {
 }
 
 /*  ACCUEIL  */
+/* Style de la section principale de la page d'accueil. */
 .hero {
   display: flex;
   justify-content: center;
@@ -57,21 +62,24 @@ body.dark .mode-toggle {
   padding: 20px;
 }
 
+/* Style de la carte de profil au centre de la page d'accueil. */
 .profile-card {
   background: rgba(255, 255, 255, 0.95);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
-  max-width: 450px;
+  max-width: 600px;
   width: 100%;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
 }
 
+/* Style de la carte de profil en mode sombre. */
 body.dark .profile-card {
   background: rgba(30, 30, 30, 0.95);
 }
 
+/* Style de l'image de profil. */
 .profile-img {
   width: 140px;
   height: 140px;
@@ -82,16 +90,19 @@ body.dark .profile-card {
   transition: transform 0.3s ease;
 }
 
+/* Effet de zoom au survol de l'image de profil. */
 .profile-img:hover {
   transform: scale(1.05);
 }
 
+/* Style des titres de niveau 1. */
 h1 {
   margin: 15px 0;
   color: #2f5d50;
   font-size: 2.2em;
 }
 
+/* Style des titres de niveau 2. */
 h2 {
   margin: 10px 0 20px;
   color: #5e9f7c;
@@ -99,6 +110,7 @@ h2 {
   font-size: 1.3em;
 }
 
+/* Couleurs des titres en mode sombre. */
 body.dark h1 {
   color: #9fd1ff;
 }
@@ -108,6 +120,7 @@ body.dark h2 {
 }
 
 /*  BOUTONS  */
+/* Conteneur pour les boutons d'action. */
 .btn-group {
   margin: 20px 0;
   display: flex;
@@ -116,6 +129,7 @@ body.dark h2 {
   flex-wrap: wrap;
 }
 
+/* Style commun à tous les boutons. */
 .btn,
 .btn-outline {
   display: inline-block;
@@ -129,28 +143,33 @@ body.dark h2 {
   cursor: pointer;
 }
 
+/* Style pour les boutons pleins. */
 .btn {
   background: linear-gradient(135deg, #7fbf9d, #5e9f7c);
   color: white;
 }
 
+/* Effet au survol des boutons pleins. */
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(127, 191, 157, 0.4);
 }
 
+/* Style pour les boutons avec contour. */
 .btn-outline {
   border: 2px solid #7fbf9d;
   color: #2f5d50;
   background: transparent;
 }
 
+/* Effet au survol des boutons avec contour. */
 .btn-outline:hover {
   background: #7fbf9d;
   color: white;
   transform: translateY(-3px);
 }
 
+/* Style des boutons en mode sombre. */
 body.dark .btn {
   background: linear-gradient(135deg, #6a9b71, #5e9f7c);
 }
@@ -161,6 +180,7 @@ body.dark .btn-outline {
 }
 
 /*  SOCIALS  */
+/* Conteneur pour les liens vers les réseaux sociaux. */
 .socials {
   margin-top: 25px;
   display: flex;
@@ -169,6 +189,7 @@ body.dark .btn-outline {
   flex-wrap: wrap;
 }
 
+/* Style des liens sociaux. */
 .socials a {
   color: #2f5d50;
   text-decoration: none;
@@ -178,37 +199,128 @@ body.dark .btn-outline {
   transition: all 0.3s ease;
 }
 
+/* Effet au survol des liens sociaux. */
 .socials a:hover {
   background: rgba(127, 191, 157, 0.1);
   transform: translateY(-2px);
 }
 
+/* Style des liens sociaux en mode sombre. */
 body.dark .socials a {
   color: #9fd1ff;
 }
 
-/*  PAGE PROJETS  */
+/*  PAGE A PROPOS (anciennement PROJETS)  */
+/* Style de l'en-tête des pages secondaires. */
 .page-header {
   text-align: center;
   padding: 80px 20px 30px;
   background: rgba(167, 211, 185, 0.3);
-  outline: rgba(9, 255, 0, 0.603) solid 1px;
 }
 
+/* En-tête en mode sombre. */
 body.dark .page-header {
   background: rgba(45, 45, 45, 0.3);
 }
 
+/* Titre dans l'en-tête. */
 .page-header h1 {
   font-size: 2em;
   margin-bottom: 15px;
   color: #2f5d50;
 }
 
+/* Titre dans l'en-tête en mode sombre. */
 body.dark .page-header h1 {
   color: #9fd1ff;
 }
 
+/*  PAGE A PROPOS  */
+/* Conteneur principal de la page "A propos", utilisant flexbox pour les colonnes. */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style pour chaque colonne (Projets, Diplômes, etc.). */
+.about-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Titre de chaque colonne. */
+.column-title {
+  font-size: 1.8em;
+  color: #2f5d50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #7fbf9d;
+}
+
+/* Titre de colonne en mode sombre. */
+body.dark .column-title {
+  color: #9fd1ff;
+  border-bottom-color: #5e9f7c;
+}
+
+/* Conteneur pour la liste des projets (disposition verticale). */
+.projets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Conteneur pour les sections d'information (Diplômes, Expériences). */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Style pour chaque élément d'information (un diplôme, une expérience). */
+.info-item {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #7fbf9d;
+}
+
+/* Élément d'information en mode sombre. */
+body.dark .info-item {
+  background: rgba(30, 30, 30, 0.7);
+  border-left-color: #5e9f7c;
+}
+
+/* Titre dans un élément d'information. */
+.info-item h3 {
+  margin: 0 0 5px 0;
+  color: #2f5d50;
+}
+
+/* Titre dans un élément d'information en mode sombre. */
+body.dark .info-item h3 {
+  color: #9fd1ff;
+}
+
+.info-item p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Texte secondaire (ex: spécialités du bac). */
+.info-item small {
+  color: #555;
+}
+
+body.dark .info-item small {
+  color: #bbb;
+}
+
+/* Style pour la grille des projets (non utilisé sur la page A-propos mais conservé). */
 .projets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -218,6 +330,7 @@ body.dark .page-header h1 {
   margin: 0 auto;
 }
 
+/* Style pour une carte de projet. */
 .projet-card {
   background: rgba(247, 255, 244, 0.95);
   border-radius: 15px;
@@ -228,11 +341,13 @@ body.dark .page-header h1 {
   backdrop-filter: blur(10px);
 }
 
+/* Effet au survol d'une carte de projet. */
 .projet-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Carte de projet en mode sombre. */
 body.dark .projet-card {
   background: rgba(3, 3, 3, 0.95);
 }
@@ -266,8 +381,9 @@ body.dark .projet-card p {
 }
 
 /*  MODALE  */
+/* Style de la fenêtre modale (superposition plein écran). */
 .modal {
-  display: none;
+  display: none; /* Cachée par défaut */
   position: fixed;
   top: 0;
   left: 0;
@@ -279,6 +395,7 @@ body.dark .projet-card p {
   align-items: center;
 }
 
+/* Contenu de la modale. */
 .modal-content {
   background: white;
   padding: 30px;
@@ -292,11 +409,13 @@ body.dark .projet-card p {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
+/* Contenu de la modale en mode sombre. */
 body.dark .modal-content {
   background: #1e1e1e;
   color: #eee;
 }
 
+/* Bouton pour fermer la modale. */
 #closeModal {
   position: absolute;
   top: 15px;
@@ -331,6 +450,7 @@ body.dark .modal-content h2 {
 }
 
 /*  CARROUSEL  */
+/* Conteneur du carrousel d'images dans la modale. */
 .carousel-container {
   position: relative;
   margin: 20px 0;
@@ -338,17 +458,20 @@ body.dark .modal-content h2 {
   border-radius: 10px;
 }
 
+/* Piste contenant toutes les images du carrousel. */
 .carousel-track {
   display: flex;
   transition: transform 0.4s ease;
 }
 
+/* Une seule diapositive (slide) du carrousel. */
 .carousel-slide {
   min-width: 100%;
   display: flex;
   justify-content: center;
 }
 
+/* Image à l'intérieur d'une diapositive. */
 .carousel-image {
   width: 100%;
   max-height: 350px;
@@ -356,6 +479,7 @@ body.dark .modal-content h2 {
   border-radius: 10px;
 }
 
+/* Boutons de navigation (précédent/suivant) du carrousel. */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -383,6 +507,7 @@ body.dark .modal-content h2 {
   right: 15px;
 }
 
+/* Indicateurs (petits points) sous le carrousel. */
 .carousel-indicators {
   display: flex;
   justify-content: center;
@@ -390,6 +515,7 @@ body.dark .modal-content h2 {
   margin-top: 15px;
 }
 
+/* Style d'un seul point indicateur. */
 .indicator {
   width: 10px;
   height: 10px;
@@ -399,11 +525,13 @@ body.dark .modal-content h2 {
   transition: background 0.3s ease;
 }
 
+/* Style du point indicateur pour la diapositive active. */
 .indicator.active {
   background: #7fbf9d;
 }
 
 /*  RESPONSIVE  */
+/* Styles pour les écrans de petite taille (tablettes et mobiles). */
 @media (max-width: 768px) {
   .mode-toggle {
     top: 10px;
@@ -451,21 +579,8 @@ body.dark .modal-content h2 {
     font-size: 1.6em;
   }
 
-  .projets {
-    grid-template-columns: 1fr;
-    padding: 20px 10px;
-    gap: 20px;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-    margin: 10px;
-  }
-
-  .carousel-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
+  /* Les colonnes de la page "A propos" passent les unes sous les autres. */
+  .about-container {
+    flex-direction: column;
   }
 }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Portfolio - A propos de moi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Bouton pour le mode sombre/clair -->
+    <button id="darkModeToggle" class="mode-toggle">🌙 Mode sombre</button>
+
+    <!-- En-tête de la page -->
+    <header class="page-header">
+      <h1>A propos de moi</h1>
+      <a href="index.html" class="btn-outline">← Retour à l'accueil</a>
+    </header>
+
+    <!-- Conteneur principal divisé en deux colonnes -->
+    <div class="about-container">
+      <!-- Colonne de gauche : Liste des projets -->
+      <div class="about-column">
+        <h2 class="column-title">Mes Projets</h2>
+        <!-- Les projets seront insérés ici par le JavaScript -->
+        <div class="projets-list" id="projetsContainer">
+          <!-- Projets générés par JS -->
+        </div>
+      </div>
+
+      <!-- Colonne de droite : Informations personnelles -->
+      <div class="about-column">
+        <!-- Section des diplômes -->
+        <h2 class="column-title">Diplômes</h2>
+        <div class="info-section">
+          <div class="info-item">
+            <h3>Licence Informatique</h3>
+            <p>
+              INSA HDF, campus Mont-Houy Valenciennes| 2023 - 2026 (en cours)
+            </p>
+          </div>
+          <div class="info-item">
+            <h3>Baccalauréat Général</h3>
+            <p>Lycée des nerviens, Bavay | Obtenu en 2023</p>
+            <small
+              >Spécialités : NSI, SES et option Mathématiques
+              complémentaires</small
+            >
+          </div>
+          <div class="info-item">
+            <h3>Brevet des collèges</h3>
+            <p>Collège notre dames de l'assomption | Obtenu en 2020</p>
+          </div>
+        </div>
+
+        <!-- Section des expériences professionnelles -->
+        <h2 class="column-title">Expériences Professionnelles</h2>
+        <div class="info-section">
+          <div class="info-item">
+            <h3>Mission d'intérim</h3>
+            <p>Ampere Maubeuge | juin à juillet 2025</p>
+            <small>secteur peinture</small>
+          </div>
+          <div class="info-item">
+            <h3>Mission d'intérim</h3>
+            <p>ORT Nord | juin à juillet 2024</p>
+            <p>ORT Nord | juin à juillet 2023</p>
+            <small>Gestion des stocks, mise en rayon et service client.</small>
+          </div>
+          <div class="info-item">
+            <h3>Stage d'observation</h3>
+            <p>Framatome Jeumont |2 semaines novembre 2019</p>
+            <small>Gestion des stocks, mise en rayon et service client.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fenêtre modale pour afficher les détails d'un projet (cachée par défaut) -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <!-- Bouton pour fermer la modale -->
+        <button id="closeModal">&times;</button>
+        <!-- Contenu de la modale qui sera rempli par JavaScript -->
+        <h2 id="modalTitle"></h2>
+        <div id="modalImages"></div>
+        <p id="modalDesc"></p>
+        <p><strong>Technologies:</strong> <span id="modalTech"></span></p>
+        <p><strong>Date:</strong> <span id="modalDate"></span></p>
+        <a id="modalLink" href="#" target="_blank" class="btn"
+          >Voir sur GitHub</a
+        >
+      </div>
+    </div>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
